@@ -1,22 +1,26 @@
 <!-- #header -->
 <div id="header">
+
 	<!-- #header-inside -->
-    <div id="header-inside" class="container_12 clearfix">
+    <div id="header-inside" class="container_12 clearfix"> 
+
     	<!-- #header-inside-left -->
         <div id="header-inside-left" class="grid_8">
             
-            <?php if ($logo): ?>
-            <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-            <?php endif; ?>
+            <?php if ($logo): ?> 
+            <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a> 
+
+        <?php endif; ?> 
      
-            <?php if ($site_name || $site_slogan): ?>
+            <?php if ($site_name || $site_slogan): ?> 
+
             <div class="clearfix">
-            <?php if ($site_name): ?>
-            <span id="site-name"><a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a></span>
-            <?php endif; ?>
-            <?php if ($site_slogan): ?>
-            <span id="slogan"><?php print $site_slogan; ?></span>
-            <?php endif; ?>
+            <?php if ($site_name): ?> 
+            <span id="site-name"><a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a></span> 
+        <?php endif; ?> 
+            <?php if ($site_slogan): ?> 
+            <span id="slogan"><?php print $site_slogan; ?></span> 
+        <?php endif; ?>  
             </div>
             <?php endif; ?>
             
@@ -25,7 +29,8 @@
         <!-- #header-inside-right -->    
         <div id="header-inside-right" class="grid_4">
 
-			<?php print render($page['search_area']); ?>
+            <?php print render($page['search_area']); ?> 
+
 
         </div><!-- EOF: #header-inside-right -->
     
@@ -40,16 +45,18 @@
     
     	<div class="grid_12">
             <div id="navigation" class="clearfix">
-            <?php if ($page['navigation']) :?>
-            <?php print drupal_render($page['navigation']); ?>
-            <?php else :
-            if (module_exists('i18n_menu')) {
-            $main_menu_tree = i18n_menu_translated_tree(variable_get('menu_main_links_source', 'main-menu'));
-            } else {
-            $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu')); 
+            <?php if ($page['navigation']) :?> 
+            <?php print drupal_render($page['navigation']); ?> 
+            <?php else : 
+            if (module_exists('i18n_menu')) { 
+            $main_menu_tree = i18n_menu_translated_tree(variable_get('menu_main_links_source', 'main-menu')); 
+            } else { 
+            $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+
             }
-            print drupal_render($main_menu_tree);
-            endif; ?>
+            print drupal_render($main_menu_tree); 
+            endif; ?> 
+
             </div>
         </div>
         
@@ -60,22 +67,25 @@
 <!-- #banner -->
 <div id="banner">
 
-	<?php print render($page['banner']); ?>
-	
-    <?php if (theme_get_setting('slideshow_display','corporateclean')): ?>
-    
-    <?php if ($is_front): ?>
+    <?php print render($page['banner']); ?> 
+
+	<?php if (theme_get_setting('slideshow_display','corporateclean')): ?> 
+
+    <?php if ($is_front): ?> 
+
     
     <!-- #slideshow -->
     <div id="slideshow">
     
         <!--slider-item-->
-        <div class="slider-item">
+
+        <div class="slider-">
             <div class="content container_12">
             	<div class="grid_12">
                 
                 <!--slider-item content-->
-                <div style="float:left; padding:0 30px 0 0;">
+                <div style="float:left; padding:0 30px 0 0;"> 
+                <img class="masked" src=""
                 <img class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-1.jpg"/>
                 </div>
                 <h2>Sample product name</h2>
@@ -139,13 +149,31 @@
                 
                 <!--slider-item content-->
                 <img class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-3.jpg"/>
+                <br/>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+              
                 <!--EOF:slider-item content-->
 				</div>
             </div>
         </div>
         <!--EOF:slider-item-->
-    
+  
+
     </div>
+    <div class="slider-item">
+            <div class="content container_12">
+                <div class="grid_12">
+                
+                <!--slider-item content-->
+                <img class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-3.jpg"/>
+                <br/>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+              
+                <!--EOF:slider-item content-->
+                </div>
+            </div>
+        </div>
+        
     <!-- EOF: #slideshow -->
     
     <!-- #slider-controls-wrapper -->
